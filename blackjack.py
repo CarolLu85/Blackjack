@@ -87,3 +87,5 @@ while not End_of_game:
     elif player_score < dealer_score:
       End_of_game = True   
       print("dealer wins")
+
+# unsolved issues: two Ace in a hand. on what condition, change the two Aces to 1, or just simplely change both of them to 1 and move to the next round.
