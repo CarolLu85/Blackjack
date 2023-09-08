@@ -3,8 +3,13 @@ cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 dealer_cards = []
 player_cards = []
 def deal_cards(cards_list):
+  """ Returns a random number/card from the deck"""
   random_numbers = random.choice(cards)
   cards_list.append(random_numbers)
+
+for _ in range(2):
+  deal_cards(player_cards)
+  deal_cards(dealer_cards)  
 
 # random_numbers = random.sample(cards,2)
 # player_cards.append (random_numbers[0])
