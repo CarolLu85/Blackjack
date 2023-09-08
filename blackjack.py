@@ -2,12 +2,16 @@ import random
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 dealer_cards = []
 player_cards = []
-random_numbers = random.sample(cards,2)
-player_cards.append (random_numbers[0])
-dealer_cards.append (random_numbers[1])
-random_numbers = random.sample(cards,2)
-player_cards.append (random_numbers[0])
-dealer_cards.append (random_numbers[1])
+def deal_cards(cards_list):
+  random_numbers = random.choice(cards)
+  cards_list.append(random_numbers)
+
+# random_numbers = random.sample(cards,2)
+# player_cards.append (random_numbers[0])
+# dealer_cards.append (random_numbers[1])
+# random_numbers = random.sample(cards,2)
+# player_cards.append (random_numbers[0])
+# dealer_cards.append (random_numbers[1])
 
 def score(cards_list):
     index = 0
