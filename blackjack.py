@@ -21,7 +21,7 @@ def score(cards_list):
   if 11 in cards_list and sum(cards_list) > 21:
     cards_list.remove(11)
     cards_list.append(1)   
-    return sum(cards_list)
+  return sum(cards_list)
 
 def compare(player_score, dealer_score):
   """ Compares the player's score with the dealer's."""
