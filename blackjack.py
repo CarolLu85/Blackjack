@@ -3,14 +3,14 @@ import os
 # def clear_screen():
   # os.system("cls")
 
-cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 dealer_cards = []
 player_cards = []
 end_of_game = False
 def deal_cards(cards_list):
   """ Returns a random number/card from the deck"""
+  cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
   random_numbers = random.choice(cards)
-  cards_list.append(random_numbers)
+  return random_numbers
 
 def score(cards_list):
   """" Take a list of cards and return the score calculated from the cards list."""
@@ -41,8 +41,8 @@ def compare(player_score, dealer_score):
     return "You  lose"
 
 for _ in range(2):
-  deal_cards(player_cards)
-  deal_cards(dealer_cards)  
+  player_cards(deal_cards(player_cards))
+  dealer_cards(deal_cards(dealer_cards)) 
 
 while not end_of_game:
   player_score = score(player_cards)
@@ -54,13 +54,13 @@ while not end_of_game:
   else:
     question = input("type 'hit' to get one more card, type 'stand' to exit \n")
     if question == "hit":
-      player_cards.append(deal_cards())
+      player_cards.append(deal_cards(player_cards))
     else:
       print("Game over")
       end_of_game = True
 
   while dealer_score < 17:
-    dealer_cards.append(deal_cards())
+    dealer_cards.append(deal_cards(dealer_cards))
     dealer_score = sum(dealer_cards)
 
   print(compare(player_score, dealer_score))
