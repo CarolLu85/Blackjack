@@ -1,4 +1,8 @@
 import random
+import os
+# def clear_screen():
+  # os.system("cls")
+
 cards = [11, 2, 3, 4, 5, 6, 7, 8, 9, 10, 10, 10, 10]
 dealer_cards = []
 player_cards = []
@@ -20,6 +24,7 @@ def score(cards_list):
     return sum(cards_list)
 
 def compare(player_score, dealer_score):
+  """ Compares the player's score with the dealer's."""
   if dealer_score == player_score:
     return "Draw"
   elif player_score == 0:
@@ -44,15 +49,15 @@ while not end_of_game:
   dealer_score = score(dealer_cards)
 
   if player_score == 0 or dealer_score == 0 or player_score > 21:
-    end_of_game = True
     print("Game over.")
+    end_of_game = True
   else:
     question = input("type 'hit' to get one more card, type 'stand' to exit \n")
     if question == "hit":
       player_cards.append(deal_cards())
     else:
-      end_of_game = True
       print("Game over")
+      end_of_game = True
 
   while dealer_score < 17:
     dealer_cards.append(deal_cards())
