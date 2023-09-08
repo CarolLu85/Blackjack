@@ -43,7 +43,7 @@ while not end_of_game:
   player_score = score(player_cards)
   dealer_score = score(dealer_cards)
 
-  if player_score == 0 or computer_score == 0 or player_score > 21:
+  if player_score == 0 or dealer_score == 0 or player_score > 21:
     end_of_game = True
     print("Game over.")
   else:
